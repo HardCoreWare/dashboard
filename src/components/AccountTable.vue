@@ -2,82 +2,52 @@
 
   <div class="row">
 
-
-
-
-
                             <div class="col-sm-12">
                                 <div class="card-box table-responsive">
                                     <div class="dropdown pull-right">
-                                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
+
                                     </div>
 
-                        			<h4 class="header-title m-t-0 m-b-30">Buttons Example</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Cuentas Mayores</h4>
 
                                     <div class="row">
 
+                        				<div class="col-lg-4">
+                        					<form class="form-horizontal" role="form">
 
+                                                <div class="form-group">
+	                                                <div class="col-sm-10">
+                                                        <input class="btn btn-block" type="button" value="ACTUALIZAR" id="btnInforme">
+	                                                </div>
+                                                </div>
 
+	                                        </form>
+                                        </div>
 
                                     </div>
 
                                     <table id="table" class="table">
+
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>#</th>
+                                                <th>Cuenta</th>
+                                                <th>Superconcepto</th>
+                                                <th>Concepto</th>
                                             </tr>
                                         </thead>
 
-                                        <tbody>
+                                        <tbody v-bind:key="row.index" v-for="row in accounts">
+
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012/03/29</td>
-                                                <td>$433,060</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>$162,700</td>
+                                                <td>{{row.id}}</td>
+                                                <td>{{row.account}}</td>
+                                                <td>{{row.concept}}</td>
+                                                <td><input type="checkbox" v-bind:checked="row.editable"></td>
                                             </tr>
 
                                         </tbody>
+
                                     </table>
                                 </div>
                             </div>
@@ -85,5 +55,39 @@
                         </div>
                         <!-- end row -->
 
-
 </template>
+
+<script>
+import { mapState,mapMutations } from 'vuex'
+
+export default {
+
+  name: 'AccountTable',
+
+  computed: {
+
+    ...mapState(['accounts'])
+
+  },
+
+  methods:{
+
+    
+
+  }
+
+}
+</script>
+
+
+<style scoped>
+
+td{
+
+    color:white
+
+}
+
+</style>
+
+

@@ -11,10 +11,10 @@
 
           <router-view></router-view>
 
-        </div> 
+        </div>
         <!-- container -->
 
-      </div> 
+      </div>
       <!-- content -->
 
       <footer class="footer">2016 - 2017 © Adminto.</footer>
@@ -22,27 +22,23 @@
     </div>
     <!-- End content-page -->
 
-
   </div>
 </template>
 
 <script>
 
-import Topbar from '@/components/Topbar.vue';
-import Leftbar from '@/components/Leftbar.vue';
-
+import Topbar from '@/components/Topbar.vue'
+import Leftbar from '@/components/Leftbar.vue'
 
 export default {
-  
-  name:'App',
 
-  components:{
+  name: 'App',
 
-    Topbar,Leftbar
+  components: {
+
+    Topbar, Leftbar
 
   }
 
 }
 </script>
-
-

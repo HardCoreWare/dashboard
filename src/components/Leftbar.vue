@@ -41,8 +41,8 @@
 <script>
 
 export default {
-    
-    name: 'Leftbar'
+
+  name: 'Leftbar'
 
 }
 
